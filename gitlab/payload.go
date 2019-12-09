@@ -150,25 +150,26 @@ type BuildEventPayload struct {
 
 // JobEventPayload contains the information for GitLab's Job status change
 type JobEventPayload struct {
-	ObjectKind       string      `json:"object_kind"`
-	Ref              string      `json:"ref"`
-	Tag              bool        `json:"tag"`
-	BeforeSHA        string      `json:"before_sha"`
-	SHA              string      `json:"sha"`
-	JobID            int64       `json:"Job_id"`
-	JobName          string      `json:"Job_name"`
-	JobStage         string      `json:"Job_stage"`
-	JobStatus        string      `json:"Job_status"`
-	JobStartedAt     customTime  `json:"Job_started_at"`
-	JobFinishedAt    customTime  `json:"Job_finished_at"`
-	JobDuration      int64       `json:"Job_duration"`
-	Job              bool        `json:"Job"`
-	JobFailureReason string      `json:"job_failure_reason"`
-	ProjectID        int64       `json:"project_id"`
-	ProjectName      string      `json:"project_name"`
-	User             User        `json:"user"`
-	Commit           BuildCommit `json:"commit"`
-	Repository       Repository  `json:"repository"`
+	ObjectKind         string      `json:"object_kind"`
+	Ref                string      `json:"ref"`
+	Tag                bool        `json:"tag"`
+	BeforeSHA          string      `json:"before_sha"`
+	SHA                string      `json:"sha"`
+	BuildID            int64       `json:"build_id"`
+	BuildName          string      `json:"build_name"`
+	BuildStage         string      `json:"build_stage"`
+	BuildStatus        string      `json:"build_status"`
+	BuildStartedAt     customTime  `json:"build_started_at"`
+	BuildFinishedAt    customTime  `json:"build_finished_at"`
+	BuildDuration      int64       `json:"build_duration"`
+	BuildAllowFailure  bool        `json:"build_allow_failure"`
+	BuildFailureReason string      `json:"build_failure_reason"`
+	ProjectID          int64       `json:"project_id"`
+	ProjectName        string      `json:"project_name"`
+	User               User        `json:"user"`
+	Commit             BuildCommit `json:"commit"`
+	Repository         Repository  `json:"repository"`
+	Runner             Runner      `json:"runner"`
 }
 
 // SystemHookPayload contains the ObjectKind to match with real hook events
